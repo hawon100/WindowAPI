@@ -81,7 +81,7 @@ public:
 
 		};
 
-		// Projection Matrix
+		// Perspective Projection Matrix
 		float fNear = 0.1f;
 		float fFar = 1000.0f;
 		float fFov = 90.0f;
