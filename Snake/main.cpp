@@ -47,11 +47,12 @@ protected:
     {
         if (gameOver)
         {
+			DrawString(ScreenWidth() / 2 - 7, ScreenHeight() / 2, L"Game Over!", FG_RED);
             // Show Game Over message for 3 seconds
             moveTimer += fElapsedTime;
             if (moveTimer >= 3.0f)
             {
-                DrawString(ScreenWidth() / 2 - 7, ScreenHeight() / 2 + 1, L"Press 'R' to Restart", FG_RED);
+                DrawString(ScreenWidth() / 2 - 10, ScreenHeight() / 2 + 1, L"Press 'R' to Restart", FG_RED);
                 if (GetKey('R').bPressed)
                 {
                     ResetGame();
