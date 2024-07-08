@@ -47,12 +47,12 @@ protected:
     {
         if (gameOver)
         {
-			DrawString(ScreenWidth() / 2 - 7, ScreenHeight() / 2, L"Game Over!", FG_RED);
+            DrawString(ScreenWidth() / 2 - 5, ScreenHeight() / 2 + 1, L"Game Over", FG_RED);
             // Show Game Over message for 3 seconds
             moveTimer += fElapsedTime;
             if (moveTimer >= 3.0f)
             {
-                DrawString(ScreenWidth() / 2 - 10, ScreenHeight() / 2 + 1, L"Press 'R' to Restart", FG_RED);
+                DrawString(ScreenWidth() / 2 - 10, ScreenHeight() / 2 + 1, L"Press 'R' to Restart", FG_BLUE);
                 if (GetKey('R').bPressed)
                 {
                     ResetGame();
@@ -80,7 +80,7 @@ protected:
                 gameOver = true;
                 moveTimer = 0.0f;
                 Fill(0, 0, ScreenWidth(), ScreenHeight(), L' ', 0);
-                DrawString(ScreenWidth() / 2 - 5, ScreenHeight() / 2, L"GAME OVER", FG_RED);
+				//DrawString(ScreenWidth() / 2 - 5, ScreenHeight() / 2, L"GAME OVER", FG_RED);
             }
 
             // Check if snake ate the apple
@@ -139,7 +139,10 @@ protected:
     void GrowSnake()
     {
         Segment newTail = snake.back();
-        snake.push_back(newTail);
+        for (int i = 0; i < 100; i++)
+        {
+            snake.push_back(newTail);
+        }
     }
 
     bool CheckCollision()
@@ -160,7 +163,7 @@ protected:
         return false;
     }
 
-    void PlaceApple()
+    void PlaceApple()   
     {
         std::uniform_int_distribution<int> distX(0, ScreenWidth() - 1);
         std::uniform_int_distribution<int> distY(0, ScreenHeight() - 1);
