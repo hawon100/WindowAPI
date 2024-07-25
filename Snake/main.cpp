@@ -139,10 +139,7 @@ protected:
     void GrowSnake()
     {
         Segment newTail = snake.back();
-        for (int i = 0; i < 100; i++)
-        {
-            snake.push_back(newTail);
-        }
+        snake.push_back(newTail);
     }
 
     bool CheckCollision()

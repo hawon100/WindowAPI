@@ -38,7 +38,7 @@ private:
 
     std::default_random_engine rng;
     std::uniform_int_distribution<int> spawnCountDist{ 1, 5 };
-    std::uniform_int_distribution<int> spawnOffsetDist{ -5, 5 };
+    std::uniform_int_distribution<int> spawnOffsetDist{ -10, 10 };
 
 protected:
     virtual bool OnUserCreate() override
@@ -56,7 +56,7 @@ protected:
 			DrawString(ScreenWidth() / 2 - 7, ScreenHeight() / 2, L"Game over!", FG_RED);
             // Show Game Over message for 5 seconds
             gameOverTimer += fElapsedTime;
-            if (gameOverTimer >= 5.0f)
+            if (gameOverTimer >= 3.0f)
             {
                 DrawString(ScreenWidth() / 2 - 10, ScreenHeight() / 2 + 1, L"Press 'R' to Restart", FG_RED);
                 if (GetKey('R').bPressed)
