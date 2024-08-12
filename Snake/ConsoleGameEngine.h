@@ -7,6 +7,7 @@
 #include <vector>
 #include <list>
 #include <thread>
+#include <string>
 #include <atomic>
 #include <condition_variable>
 

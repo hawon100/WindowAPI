@@ -9,6 +9,7 @@
 #include <thread>
 #include <atomic>
 #include <condition_variable>
+#include <string>
 
 enum COLOUR
 {
